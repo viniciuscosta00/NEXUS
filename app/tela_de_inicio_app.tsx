@@ -10,7 +10,7 @@ const SplashScreen: React.FC = () => {
     >
       <View style={styles.content}>
         <Image
-          source={require("../assets/images/logo.png")} // coloque sua logo aqui
+          source={require("../assets/images/logo1.png")} // coloque sua logo aqui
           style={styles.logo}
           resizeMode="contain"
         />
