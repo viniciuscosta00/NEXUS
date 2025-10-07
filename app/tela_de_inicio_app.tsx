@@ -1,4 +1,3 @@
-// SplashScreen.tsx
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
