@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: 2,
   },
-});
+}); 
