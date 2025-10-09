@@ -5,12 +5,12 @@ import { Image, StyleSheet, Text, View } from "react-native";
 const SplashScreen: React.FC = () => {
   return (
     <LinearGradient
-      colors={["#0d1f2d", "#0a2538"]} // gradiente azul escuro
+      colors={["#0d1f2d", "#0a2538"]} 
       style={styles.container}
     >
       <View style={styles.content}>
         <Image
-          source={require("../assets/images/logo1.png")} // coloque sua logo aqui
+          source={require("../assets/images/logo1.png")} 
           style={styles.logo}
           resizeMode="contain"
         />
