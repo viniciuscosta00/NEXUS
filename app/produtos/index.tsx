@@ -1,4 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
+import { router } from "expo-router";
 import React, { useState } from "react";
 import { FlatList, Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
@@ -20,6 +21,7 @@ export default function TelaProdutos() {
     const [busca, setbusca] = useState('');
 
     const categorias: Categoria[] = [
+        
         { id: '1', nome: 'Informática'},
         { id: '2', nome: 'Limpeza'},
         { id: '3', nome: 'Papelaria'},
@@ -31,6 +33,13 @@ export default function TelaProdutos() {
         { id: '3', nome: 'Borrifador Plástico', imagem: require('@/assets/images/borrifador.png'), status: 'Disponível' },
         { id: '4', nome: 'Teclado Multilaser', imagem: require('@/assets/images/teclado.png'), status: 'Baixo estoque' },
         { id: '5', nome: 'Tesoura Ergonômica', imagem: require('@/assets/images/tesoura.png'), status: 'Disponível' },
+        { id: '6', nome: 'Headset Blackwire USB', imagem: require('@/assets/images/fone.png'), status: 'Baixo estoque' },
+        { id: '7', nome: 'Flanelas,Laranja - 28cm x 38cm', imagem: require('@/assets/images/pano.png'), status: 'Disponível' },
+        { id: '8', nome: 'Grampeador Metal 11,5', imagem: require('@/assets/images/grampeador.png'), status: 'Baixo estoque' },
+        { id: '9', nome: 'Calculadora Grande 12 Dígitos ', imagem: require('@/assets/images/calculadora.png'), status: 'Disponível' },
+        { id: '10', nome: 'Pen Drive Cruzer Blade, SanDisk, 64GB', imagem: require('@/assets/images/pendrive.png'), status: 'Indisponível' },
+        { id: '11', nome: 'Resma folha A4(Report)', imagem: require('@/assets/images/resma.png'), status: 'Disponível' },
+        { id: '12', nome: 'Escova Multiúso Tradicional', imagem: require('@/assets/images/escova.png'), status: 'Disponível' },
     ];
 
     const renderProduto = ({ item }: { item: Produto }) => (
@@ -56,22 +65,24 @@ export default function TelaProdutos() {
         <ScrollView style={styles.container}>
             {/* Header */}
             <View style={styles.header}>
-                <TouchableOpacity style={styles.perfilButton}>
-                    <Ionicons name="person-outline" size={20} color="#000" />
-                    <Text style={styles.perfilText}>Docente</Text>
+                <TouchableOpacity style={styles.voltarButton} onPress={() => router.navigate('/tela_principal')}>
+                    <Ionicons name="arrow-back" size={28} color="#fff" />
                 </TouchableOpacity>
-
-            
-                <Image
-                    source={require('@/assets/images/logo.png')}
-                    style={styles.logo}
-                    resizeMode="contain"
-                />
+                <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                    <TouchableOpacity style={styles.perfilButton}>
+                        <Ionicons name="person-outline" size={20} color="#000" />
+                        <Text style={styles.perfilText}>Docente</Text>
+                    </TouchableOpacity>
+                </View>
+                <Image source={require('@/assets/images/logo.png')} style={styles.logo} resizeMode="contain" />
             </View>
+
 
             <View style={styles.titleContainer}>
                 <Ionicons name="cube-outline" size={80} color="#fff"/>
                 <Text style={styles.title}>Produtos</Text>
+
+
             </View>
 
             <View style={styles.searchContainer}>
@@ -89,10 +100,9 @@ export default function TelaProdutos() {
 
             <View style={styles.categoriasContainer}>
                 {categorias.map((cat) => (
-                    <View key={cat.id} style={styles.categoriaItem}>
-                    
+                    <TouchableOpacity key={cat.id} style={styles.categoriaItem} activeOpacity={0.7}>
                         <Text style={styles.categoriaNome}>{cat.nome}</Text>
-                    </View>
+                    </TouchableOpacity>
                 ))}
             </View>
 
@@ -111,23 +121,28 @@ export default function TelaProdutos() {
 }
 
 const styles = StyleSheet.create({
+    voltarButton: {
+        marginRight: 10,
+        borderRadius: 20,
+        padding: 8,
+    },
     container: {
         flex: 1,
         backgroundColor: '#0F2D3F',
         paddingHorizontal: 20,
-        paddingTop: 50,
+        paddingTop: 20,
     },
     header: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
+        paddingBottom: 10,
     },
     perfilButton: {
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#fff',
-        paddingHorizontal: 15,
-        paddingVertical: 8,
+        paddingHorizontal: 10,
+        paddingVertical: 4,
         borderRadius: 20,
     },
     perfilText: {
@@ -175,16 +190,27 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         marginBottom: 25,
+        
+
     },
     categoriaItem: {
         alignItems: 'center',
-    },
+            justifyContent: 'center',
+            minWidth: 100,
+            minHeight: 50,
+            paddingVertical: 10,
+            paddingHorizontal: 15,
+        },
     categoriaNome: {
-        color: '#0F2D3F',
-        backgroundColor: '#fff',
-        paddingHorizontal: 10,
-        borderRadius: 10,
-        marginTop: 5,
+            color: '#0F2D3F',
+            backgroundColor: '#fff',
+            paddingHorizontal: 20,
+            paddingVertical: 10,
+            borderRadius: 15,
+            marginTop: 5,
+            fontSize: 15,
+            fontWeight: 'bold',
+            marginLeft:-14,
     },
     produtosRow: {
         justifyContent: 'space-between',

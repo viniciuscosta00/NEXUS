@@ -11,13 +11,12 @@ export default function Cadastrar() {
 
     return (
         <View style={styles.container}>
-
-            <TouchableOpacity style={styles.perfilButton}>
+            <View style={{ width: '100%', alignItems: 'center', marginTop: 10 }}>
+                <TouchableOpacity style={styles.perfilButton}>
                     <Ionicons name="person-outline" size={20} color="#000" />
                     <Text style={styles.perfilText}>Docente</Text>
                 </TouchableOpacity>
-
-            
+            </View>
             <Image
                 source={require('@/assets/images/logoNexus.png')}
                 style={styles.logo}
@@ -47,7 +46,7 @@ export default function Cadastrar() {
 
             <Image
                 source={require('@/assets/images/baner.png')}
-                style={styles.baner}
+                style={styles.banner}
                 resizeMode="contain"
             />
         
@@ -57,22 +56,21 @@ export default function Cadastrar() {
 
 const styles = StyleSheet.create({
 
+    container: {
+        flex: 1,
+        backgroundColor: '#0F2D3F',
+        alignItems: 'center',
+        paddingHorizontal: 20,
+    },
     perfilButton: {
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#fff',
-        marginRight: 250,
-        marginTop: 100,
+        marginTop: 10,
+        marginBottom: 10, // espaçamento abaixo do botão
         paddingHorizontal: 15,
         paddingVertical: 10,
         borderRadius: 20,
-        },
-    container: {
-        flex: 1,
-        backgroundColor: '#0F2D3F', // azul escuro do fundo
-        alignItems: 'center',
-        justifyContent: 'center',
-        paddingHorizontal: 20,
     },
     logo: {
         width: 200,
@@ -80,11 +78,11 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 
-    baner: {
-        marginTop: -50,
-        width: 100,
-        height: 400,
-    },
+    banner: {
+        height: 250,
+        marginBottom: 210,
+        marginTop: 20,
+},
     
     cadastrar: {
         color: '#FFFFFF',
