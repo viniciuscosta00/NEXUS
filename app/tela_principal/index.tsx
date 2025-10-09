@@ -1,3 +1,4 @@
+import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -11,13 +12,12 @@ export default function Cadastrar() {
     return (
         <View style={styles.container}>
 
-            <TouchableOpacity
-                style={styles.perfil}
-                onPress={() => router.navigate('')}
-            >
-                <Text style={styles.perfilText}>Docente</Text>
-            </TouchableOpacity>
+            <TouchableOpacity style={styles.perfilButton}>
+                    <Ionicons name="person-outline" size={20} color="#000" />
+                    <Text style={styles.perfilText}>Docente</Text>
+                </TouchableOpacity>
 
+            
             <Image
                 source={require('@/assets/images/logoNexus.png')}
                 style={styles.logo}
@@ -26,21 +26,21 @@ export default function Cadastrar() {
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('')}
+                onPress={() => router.navigate('/_sitemap')}
             >
                 <Text style={styles.buttonText}>Meus pedidos</Text>
             </TouchableOpacity>
 
                         <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('')}
+                onPress={() => router.navigate('/_sitemap')}
             >
                 <Text style={styles.buttonText}>Solicitar</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('')}
+                onPress={() => router.navigate('/produtos')}
             >
                 <Text style={styles.buttonText}>Produtos</Text>
             </TouchableOpacity>
@@ -56,6 +56,17 @@ export default function Cadastrar() {
 }
 
 const styles = StyleSheet.create({
+
+    perfilButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        marginRight: 250,
+        marginTop: 100,
+        paddingHorizontal: 15,
+        paddingVertical: 10,
+        borderRadius: 20,
+        },
     container: {
         flex: 1,
         backgroundColor: '#0F2D3F', // azul escuro do fundo
@@ -71,7 +82,7 @@ const styles = StyleSheet.create({
 
     baner: {
         marginTop: -50,
-        width: 400,
+        width: 100,
         height: 400,
     },
     

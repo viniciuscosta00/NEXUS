@@ -39,13 +39,16 @@ export default function Cadastrar() {
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('/tela_principal/index')}
+                onPress={() => router.navigate('/tela_principal')}
             >
                 <Text style={styles.buttonText}>Cadastrar</Text>
             </TouchableOpacity>
 
                         <TouchableOpacity>
-                <Text style={styles.jtc}>Já tenho uma conta</Text>
+                <Text style={styles.jtc}
+                    onPress={() => router.navigate('/entrar')}>Já tenho uma conta
+                </Text>
+                
             </TouchableOpacity>
         
         </View>

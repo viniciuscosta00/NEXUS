@@ -17,14 +17,14 @@ export default function EntrarCadastrar() {
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('/entrar/index')}
+                onPress={() => router.navigate('/entrar')}
             >
                 <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('/cadastrar/index')}
+                onPress={() => router.navigate('/cadastrar')}
             >
                 <Text style={styles.buttonText}>Cadastre-se</Text>
             </TouchableOpacity>

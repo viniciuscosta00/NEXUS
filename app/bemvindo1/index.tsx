@@ -23,14 +23,14 @@ export default function Bemvindo() {
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('/entrar/index')}
+                onPress={() => router.navigate('/entrar')}
             >
                 <Text style={styles.buttonText}>Administrador</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('/entrar/index')}
+                onPress={() => router.navigate('/entrar')}
             >
                 <Text style={styles.buttonText}>Docente</Text>
             </TouchableOpacity>
@@ -41,7 +41,7 @@ export default function Bemvindo() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#0F2D3F', // azul escuro do fundo
+        backgroundColor: '#0F2D3F',
         alignItems: 'center',
         justifyContent: 'center',
         paddingHorizontal: 20,

@@ -37,7 +37,7 @@ export default function Entrar() {
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('/tela_principal/index')}
+                onPress={() => router.navigate('/tela_principal')}
             >
                 <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
