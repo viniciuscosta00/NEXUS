@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         fontSize: 17,
         marginBottom: 40,
+        textDecorationLine: 'underline',
     },
 
     button: {

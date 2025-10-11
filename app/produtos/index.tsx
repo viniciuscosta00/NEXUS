@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#fff',
         paddingHorizontal: 10,
-        paddingVertical: 4,
+        paddingVertical: 6,
         borderRadius: 20,
     },
     perfilText: {
@@ -151,8 +151,9 @@ const styles = StyleSheet.create({
         color: '#000',
     },
     logo: {
-        width: 60,
-        height: 60,
+        width: 90,
+        height: 90,
+        marginRight: -30,
     },
     titleContainer: {
         alignItems: 'center',

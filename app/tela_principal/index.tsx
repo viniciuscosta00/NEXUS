@@ -25,22 +25,22 @@ export default function Cadastrar() {
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('/_sitemap')}
-            >
+                onPress={() => router.navigate('/meus_pedidos')}
+            >   <Ionicons name="person-outline" size={30} color="#000" />
                 <Text style={styles.buttonText}>Meus pedidos</Text>
             </TouchableOpacity>
 
                         <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('/_sitemap')}
-            >
+                onPress={() => router.navigate('/solicitar')}
+            >   <Ionicons name="add-outline" size={30} color="#000" />
                 <Text style={styles.buttonText}>Solicitar</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={styles.button}
                 onPress={() => router.navigate('/produtos')}
-            >
+            >   <Ionicons name="cube-outline" size={30} color="#000" />
                 <Text style={styles.buttonText}>Produtos</Text>
             </TouchableOpacity>
 
@@ -66,10 +66,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#fff',
-        marginTop: 10,
-        marginBottom: 10, // espaçamento abaixo do botão
+        marginTop: 40,
         paddingHorizontal: 15,
-        paddingVertical: 10,
+        paddingVertical: 6,
         borderRadius: 20,
     },
     logo: {
@@ -123,11 +122,13 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#000',
         fontSize: 20,
+        marginLeft: 10,
     },
 
     perfilText: {
+        marginLeft: 5,
+        fontSize: 16,
         color: '#000',
-        fontSize: 15,
     },
 
 });
