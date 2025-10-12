@@ -3,11 +3,6 @@ import { router } from "expo-router";
 import React, { useState } from "react";
 import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 
-type Categoria = {
-    id: string;
-    nome: string;
-
-};
 
 export default function TelaProdutos() {
     const [busca, setbusca] = useState('');
@@ -17,7 +12,7 @@ export default function TelaProdutos() {
         <ScrollView style={styles.categoria}>
             {/* Header */}
             <View style={styles.header}>
-                <TouchableOpacity style={styles.voltarButton} onPress={() => router.navigate('/tela_principal')}>
+                <TouchableOpacity style={styles.voltarButton} onPress={() => router.navigate('/solicitar')}>
                     <Ionicons name="arrow-back" size={28} color="#fff" />
                 </TouchableOpacity>
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -72,29 +67,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingBottom: 10,
     },
-    perfilButton: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: '#fff',
-        paddingHorizontal: 10,
-        paddingVertical: 6,
-        borderRadius: 20,
-    },
-    perfilText: {
-        marginLeft: 8,
-        fontSize: 16,
-        color: '#000',
-    },
+
     logo: {
         width: 90,
         height: 90,
         marginRight: -30,
     },
-    titleRow: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginVertical: 10,
-    },
+
     titleContainer: {
         alignItems: 'center',
         marginVertical: 10,

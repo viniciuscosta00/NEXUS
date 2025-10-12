@@ -1,7 +1,7 @@
 import { router } from 'expo-router';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
-export default function Bemvindo() {
+export default function Entrar() {
     const handleSelect = (role: string) => {
         // Aqui você pode navegar para outra tela
         // ou salvar o papel do usuário
@@ -16,23 +16,30 @@ export default function Bemvindo() {
                 resizeMode="contain"
             />
 
-            <Text style={styles.bemvindo}>Bem-vindo a</Text>
-            <Text style={styles.nexus}>NEXUS</Text>
+            <Text style={styles.entrar}>Entrar</Text>
 
-            <Text style={styles.subtitlo}>Você é:</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Usuário"
+                placeholderTextColor="#aaa"
+            />
 
-            <TouchableOpacity
-                style={styles.button}
-                onPress={() => router.navigate('/entrar_cadastrarADM')}
-            >
-                <Text style={styles.buttonText}>Administrador</Text>
+
+            <TextInput
+                style={styles.input}
+                placeholder="Senha"
+                placeholderTextColor="#aaa"
+            />
+            
+            <TouchableOpacity>
+                <Text style={styles.ems}>Esqueci minha Senha</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('/entrar_cadastrar')}
+                onPress={() => router.navigate('/tela_principalADM')}
             >
-                <Text style={styles.buttonText}>Docente</Text>
+                <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
         </View>
     );
@@ -41,7 +48,7 @@ export default function Bemvindo() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#0F2D3F',
+        backgroundColor: '#0F2D3F', // azul escuro do fundo
         alignItems: 'center',
         justifyContent: 'center',
         paddingHorizontal: 20,
@@ -51,23 +58,36 @@ const styles = StyleSheet.create({
         height: 200,
         marginBottom: -40,
     },
-    bemvindo: {
+    entrar: {
         color: '#FFFFFF',
         fontSize: 30,
-        marginBottom: 4,
+        marginBottom: 40,
     },
-    nexus: {
+    ems: {
         color: '#FFFFFF',
-        fontSize: 25,
-        fontWeight: 'bold',
-        marginBottom: 50,
+        fontSize: 17,
+        marginBottom: 40,
+        textDecorationLine: 'underline',
     },
-    subtitlo: {
-        color: '#FFFFFF',
-        fontSize: 20,
-        marginBottom: 16,
-    },
+
     button: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#E5E5E5',
+        borderRadius: 20,
+        paddingVertical: 12,
+        paddingHorizontal: 24,
+        width: '80%',
+        justifyContent: 'center',
+        marginVertical: 10,
+        marginBottom: 15,
+    },
+    buttonText: {
+        color: '#000',
+        fontSize: 20,
+    },
+
+    input: {
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#E5E5E5',
@@ -79,8 +99,5 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         marginBottom: 20,
     },
-    buttonText: {
-        color: '#000',
-        fontSize: 20,
-    },
+
 });

@@ -1,7 +1,6 @@
 import { router } from 'expo-router';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-
-export default function Bemvindo() {
+export default function EntrarCadastrar() {
     const handleSelect = (role: string) => {
         // Aqui você pode navegar para outra tela
         // ou salvar o papel do usuário
@@ -11,28 +10,23 @@ export default function Bemvindo() {
     return (
         <View style={styles.container}>
             <Image
-                source={require('@/assets/images/logo.png')}
+                source={require('@/assets/images/logoNexus.png')}
                 style={styles.logo}
                 resizeMode="contain"
             />
 
-            <Text style={styles.bemvindo}>Bem-vindo a</Text>
-            <Text style={styles.nexus}>NEXUS</Text>
-
-            <Text style={styles.subtitlo}>Você é:</Text>
-
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('/entrar_cadastrarADM')}
+                onPress={() => router.navigate('/entrarADM')}
             >
-                <Text style={styles.buttonText}>Administrador</Text>
+                <Text style={styles.buttonText}>Entrar</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => router.navigate('/entrar_cadastrar')}
+                onPress={() => router.navigate('/cadastrarADM')}
             >
-                <Text style={styles.buttonText}>Docente</Text>
+                <Text style={styles.buttonText}>Cadastre-se</Text>
             </TouchableOpacity>
         </View>
     );
@@ -41,7 +35,7 @@ export default function Bemvindo() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#0F2D3F',
+        backgroundColor: '#0F2D3F', // azul escuro do fundo
         alignItems: 'center',
         justifyContent: 'center',
         paddingHorizontal: 20,
@@ -49,24 +43,10 @@ const styles = StyleSheet.create({
     logo: {
         width: 200,
         height: 200,
-        marginBottom: -40,
-    },
-    bemvindo: {
-        color: '#FFFFFF',
-        fontSize: 30,
-        marginBottom: 4,
-    },
-    nexus: {
-        color: '#FFFFFF',
-        fontSize: 25,
-        fontWeight: 'bold',
-        marginBottom: 50,
-    },
-    subtitlo: {
-        color: '#FFFFFF',
-        fontSize: 20,
         marginBottom: 16,
     },
+
+
     button: {
         flexDirection: 'row',
         alignItems: 'center',
