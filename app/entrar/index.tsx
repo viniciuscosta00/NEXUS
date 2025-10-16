@@ -32,7 +32,7 @@ export default function Entrar() {
             />
             
             <TouchableOpacity>
-                <Text style={styles.ems}>Esqueci minha Senha</Text>
+                <Text style={styles.ems} onPress={() => router.navigate('/recsenha')}>Esqueci minha Senha</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
